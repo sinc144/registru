@@ -11,7 +11,7 @@ STATUS_CHOICES = (
     ('Stanga', 'Stanga'),
 )
 
-STATUS_CHOICES1 = (
+STATUS_CHOICES_DRDP = (
     ('Bucuresti', 'Bucuresti'),
     ('Craiova', 'Craiova'),
     ('Timisoara', 'Timisoara'),
@@ -35,7 +35,7 @@ class Doc(models.Model):
     drumulNational      = models.CharField(max_length=10)
     pozitiaKilometrica  = models.CharField(max_length=50)
     partea              = models.CharField(max_length=7, null=True, blank=True,choices=STATUS_CHOICES)
-    drdp                = models.CharField(max_length=20, null=True, blank=True,choices=STATUS_CHOICES1)
+    drdp                = models.CharField(max_length=10, null=True, blank=True,choices=STATUS_CHOICES_DRDP)
     creat               = models.DateTimeField(auto_now=False, auto_now_add=True)
     modificat           = models.DateTimeField(auto_now=True, auto_now_add=False)
     rezolvat            = models.BooleanField(default=False)
