@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block content %}
+<h1>Welcome to {{title}} page!!!</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titlu</th>
+            <th scope="col">NrDoc</th>
+            <th scope="col">DataDoc</th>
+            <th scope="col">Emitent</th>
+            <th scope="col">Beneficiar</th>
+            <th scope="col">DN</th>
+            <th scope="col">PozKilom</th>
+            <th scope="col">Partea</th>
+            <th scope="col">DRDP</th>
+            <th scope="col">Creat</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in object_list %}
+        <tr>
+
+            <th scope="row">{{ obj.id }}</th>
+            <td>
+                <div style="width:200px; word-wrap: break-word">{{ obj.title }}</div>
+            </td>
+            <td>{{ obj.nrDoc }}</td>
+            <td>{{ obj.dataDoc }}</td>
+            <td>{{ obj.emitent }}</td>
+            <td>{{ obj.beneficiar }}</td>
+            <td>{{ obj.drumulNational }}</td>
+            <td>{{ obj.pozitiaKilometrica }}</td>
+            <td>{{ obj.partea }}</td>
+            <td>{{ obj.drdp }}</td>
+            <td>{{obj.creat}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content%}
+
+<td>
+    <div style="width:80px; word-wrap: break-word"> your text </div>
+</td>
